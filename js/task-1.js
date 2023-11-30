@@ -8,16 +8,16 @@ const customer = {
     return this.balance;
   },
   getDiscount() {
-    return discount;
+    return this.discount;
   },
   setDiscount(value) {
-    discount = value;
+    this.discount = value;
   },
   getOrders() {
     return this.orders;
   },
   addOrder(cost, order) {
-    this.balance -= cost - cost * discount;
+    this.balance -= cost - cost * this.discount;
     this.orders.push(order);
   },
   // Change code above this line

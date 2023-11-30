@@ -12,12 +12,14 @@ class Storage {
     this.#items.push(newItem);
   }
   removeItem(itemToRemove) {
-    this.#items.indexOf(itemToRemove);
-    if (this.#items.includes(itemToRemove)) {
-      return this.#items.slice(index, 1);
+    const index = this.#items.indexOf(itemToRemove);
+    if (index === -1) {
+      return;
     }
+    return this.#items.splice(index, 1);
   }
 }
+
 const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
 storage.addItem('Droid');
